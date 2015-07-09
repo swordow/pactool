@@ -12,10 +12,23 @@ function regExpMatch(url, patter)
 
 function FindProxyForURL(url, host)
 {
+  if (shExpMatch(url, "http*://google.com*")) return strProxy;
   if (shExpMatch(url, "http*://*.google.com*")) return strProxy;
+  if (shExpMatch(url, "http*://*.gstatic.com*")) return strProxy;
+  if (shExpMatch(url, "http*://*.google.com*")) return strProxy;
+
+  if (shExpMatch(url, "http*://google.com.hk*")) return strProxy;
+  if (shExpMatch(url, "http*://*.google.com.hk*")) return strProxy;
+  if (shExpMatch(url, "http*://*.gstatic.com.hk*")) return strProxy;
+  if (shExpMatch(url, "http*://*.google.com.hk*")) return strProxy;
+  
   if (shExpMatch(url, "http*://*.youtube.com*")) return strProxy;
   if (shExpMatch(url, "http*://*.youtube.com*") || shExpMatch(url, "http*://youtube.com*")) return strProxy;
 	if (shExpMatch(url, "http*://*.youtubecn.com*") || shExpMatch(url, "http*://youtubecn.com*")) return strProxy;
+  if (shExpMatch(url, "http*://*.wikipedia.org*") return strProxy;
+
+  //if (shExpMatch(url, "http*://*.adobe.cn*")) return strProxy;
+  //if (shExpMatch(url, "http*://*.adobe.com*")) return strProxy;
   if (regExpMatch(url, "^https?:\\/\\/[^\\/]+google\\.(.*)")) return strProxy;
   if (regExpMatch(url, "^[\\w\\-]+:\\/+(?!\\/)(?:[^\\/]+\\.)?gmail\\.com"))  return strProxy;
 	if (regExpMatch(url, "^[\\w\\-]+:\\/+(?!\\/)(?:[^\\/]+\\.)?google-analytics\\.com")) return strProxy;
